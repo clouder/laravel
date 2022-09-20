@@ -20,11 +20,11 @@ php artisan migrate
 chmod -R ugo+rw /.composer
 
 if [ ! -z "$PORT" ]; then
-    sed -i -e "s/--port=80/--port=$PORT/g" /etc/supervisor/conf.d/supervisord.conf
+#    sed -i -e "s/--port=80/--port=$PORT/g" /etc/supervisor/conf.d/supervisord.conf
 fi
 
 if [ $# -gt 0 ];then
     exec gosu $WWWUSER "$@"
 else
-    /usr/bin/supervisord
+#    /usr/bin/supervisord
 fi
